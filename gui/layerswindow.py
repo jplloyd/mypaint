@@ -97,8 +97,8 @@ class LayersTool (SizedVBoxToolWidget):
 
     LAYER_MODE_TOOLTIP_MARKUP_TEMPLATE = "<b>{name}</b>\n{description}"
 
-    # TRANSLATORS: tooltip for the opacity slider (text)
-    OPACITY_SCALE_TOOLTIP_TEXT_TEMPLATE = _("Layer opacity: %d%%")
+    # TRANSLATORS: tooltip for the opacity/effect slider (text)
+    OPACITY_SCALE_TOOLTIP_TEXT_TEMPLATE = _("Layer opacity/effect: %d%%")
     OPACITY_LABEL_TEXT_TEMPLATE = _(u"%d%%")
 
     __gtype_name__ = 'MyPaintLayersTool'
