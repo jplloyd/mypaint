@@ -28,6 +28,7 @@ image: Visual Studio 2015
 # set clone depth
 clone_depth: 1
 
+# If the first build fails, don't try to run the second.
 matrix:
   fast_finish: true
 
@@ -53,6 +54,15 @@ for:
       - lib/**/*.cpp
       - lib/**/*.hpp
       - lib/**/*.i
+
+- matrix:
+    only:
+      - MSYS2_ARCH: x86_64
+
+  # Use the (1GB) build cache to avoid re-downloading 64-bit msys packages
+  # (still need to install them, 1GB is not enough to cache the install)
+  cache:
+    - C:\msys64\var\cache\pacman\pkg
 -
   skip_commits:
     files:
