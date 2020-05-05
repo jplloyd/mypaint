@@ -93,15 +93,18 @@ test_script:
   - bash %APPVEYOR_BUILD_FOLDER%\windows\msys2-build.sh doctest
   - bash %APPVEYOR_BUILD_FOLDER%\windows\msys2-build.sh tests
 
-after_test:
-  - bash %APPVEYOR_BUILD_FOLDER%\windows\msys2-build.sh clean
-  - bash %APPVEYOR_BUILD_FOLDER%\windows\msys2-build.sh bundle
+on_finish:
+   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+
+# after_test:
+#   - bash %APPVEYOR_BUILD_FOLDER%\windows\msys2-build.sh clean
+#   - bash %APPVEYOR_BUILD_FOLDER%\windows\msys2-build.sh bundle
 
 
 #---------------------------------#
 #      artifacts configuration    #
 #---------------------------------#
 
-artifacts:
-  - path: 'out\pkgs\*'
-  - path: 'out\bundles\*'
+# artifacts:
+#   - path: 'out\pkgs\*'
+#   - path: 'out\bundles\*'
