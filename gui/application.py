@@ -116,6 +116,7 @@ def _init_icons(icon_path, default_icon='org.mypaint.MyPaint'):
     # Default location for our icons. The user's theme can override these.
     icon_theme = Gtk.IconTheme.get_default()
     icon_theme.append_search_path(icon_path)
+    print(os.listdir(icon_path))
     # Ensure that MyPaint has its icons.
     # Test a sample symbolic icon to make sure librsvg is installed and
     # GdkPixbuf's loader cache has been informed about it.
@@ -145,7 +146,7 @@ def _init_icons(icon_path, default_icon='org.mypaint.MyPaint'):
             "https://github.com/mypaint/mypaint/wiki/FAQ-Missing-icons "
             "for possible solutions."
         )
-        sys.exit(1)
+        # sys.exit(1)
     # Default icon for all windows
     Gtk.Window.set_default_icon_name(default_icon)
 
