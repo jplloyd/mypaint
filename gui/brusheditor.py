@@ -32,6 +32,7 @@ from . import dialogs
 from . import brushmanager
 from .builderhacks import add_objects_from_template_string
 from .windowing import SubWindow
+from .sliderwidget import ScaleWithEntry  # noqa
 
 logger = logging.getLogger(__name__)
 
